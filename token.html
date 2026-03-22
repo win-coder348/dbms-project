@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tokens</title>
+</head>
+<body>
+    <h2>Token List</h2>
+
+    <table border="1">
+        <tr>
+            <th>Token</th>
+            <th>Item</th>
+            <th>Quantity</th>
+            <th>Status</th>
+            <th>Action</th>
+        </tr>
+
+        {% for t in tokens %}
+        <tr>
+            <td>{{ t.token_number }}</td>
+            <td>{{ t.item_name }}</td>
+            <td>{{ t.quantity }}</td>
+            <td>{{ t.status }}</td>
+            <td>
+                <a href="/update_status/{{ t.token_id }}">Update</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <a href="/">Back</a>
+</body>
+</html>
